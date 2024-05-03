@@ -26,7 +26,8 @@ export default function SignUp() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      if (data.success === fase) {
+      console.log(data);
+      if (data.success === false) {
         setLoading(false);
         setError(data.message);
         return;
@@ -34,9 +35,8 @@ export default function SignUp() {
       setLoading(false);
       setError(null);
       navigate("/sign-in");
-      console.log(data);
     } catch (error) {
-      setLoading(False);
+      setLoading(false);
       setError(error.message);
     }
   };
