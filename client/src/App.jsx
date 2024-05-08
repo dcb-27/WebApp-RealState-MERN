@@ -9,6 +9,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
 import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
+import CheckoutPage from "./pages/CheckoutPage";
+import Completion from "./pages/Completion";
 import Search from "./pages/Search";
 
 export default function App() {
@@ -31,6 +33,8 @@ export default function App() {
             element={<UpdateListing />}
           />
         </Route>
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/comfirmation" element={<Completion />} />
       </Routes>
     </BrowserRouter>
   );

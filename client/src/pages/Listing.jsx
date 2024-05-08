@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 import { useSelector } from "react-redux";
@@ -101,9 +101,12 @@ export default function Listing() {
               {listing.address}
             </p>
             <div className="flex gap-4">
-              <p className="bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md">
-                {listing.type === "rent" ? "For Rent" : "For Sale"}
-              </p>
+              <Link
+                className="bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md cursor-pointer"
+                to={"/checkout"}
+              >
+                <p>{listing.type === "rent" ? "For Rent" : "For Sale"}</p>
+              </Link>
               {listing.offer && (
                 <p className="bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md">
                   ${+listing.regularPrice - +listing.discountPrice} OFF
